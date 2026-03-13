@@ -26,7 +26,7 @@ class AddEditCoffeeForm(QDialog):
     def load_coffee_data(self):
         """Загружает данные кофе для редактирования"""
         try:
-            conn = sqlite3.connect('coffee.sqlite')
+            conn = sqlite3.connect('data/coffee.sqlite')
             cursor = conn.cursor()
 
             cursor.execute('SELECT * FROM coffee WHERE id = ?', (self.coffee_id,))
@@ -70,7 +70,7 @@ class AddEditCoffeeForm(QDialog):
             price = float(self.lineEdit_price.text()) if self.lineEdit_price.text() else 0
             volume = int(self.lineEdit_volume.text()) if self.lineEdit_volume.text() else 0
 
-            conn = sqlite3.connect('coffee.sqlite')
+            conn = sqlite3.connect('data/coffee.sqlite')
             cursor = conn.cursor()
 
             if self.coffee_id:  # Редактирование

@@ -1,7 +1,7 @@
 import sqlite3
 
 # Создаем подключение к базе данных
-conn = sqlite3.connect('coffee.sqlite')
+conn = sqlite3.connect('data/coffee.sqlite')
 cursor = conn.cursor()
 
 # Создаем таблицу
